@@ -65,7 +65,7 @@ public class internApp extends DialogflowApp {
 				.setDisplayText("\n안녕하세요, 캠핑장 예약 서비스입니다.\n무엇을 도와드릴까요?")
 		;
 		basicCard
-				.setImage(new Image().setUrl("http://file3.instiz.net/data/file3/2020/04/14/6/a/5/6a5cc8ef13727184b3d8af5c63de8926.jpg")
+				.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/001.gif")
 						.setAccessibilityText("home"))
 				.setImageDisplayOptions("CROPPED");
 
@@ -210,7 +210,7 @@ public class internApp extends DialogflowApp {
 														.setKey("노을")),
 								new ListSelectListItem()
 										.setTitle("서울대공원 캠핑장")
-										.setDescription(array.get(6).getAsJsonObject().get("COT_ADDR_FULL_OLD").getAsString())
+										.setDescription(array.get(6).getAsJsonObject().get("COT_ADDR_FULL_OLD").getAsString().substring(4,25))
 										.setImage(
 												new Image()
 														.setUrl("http://www.seoul.go.kr/res_newseoul_story/campingjang/images/park_pic02.jpg")
@@ -268,7 +268,7 @@ public class internApp extends DialogflowApp {
 			basicCard
 					.setTitle("난지 캠핑장")
 					.setFormattedText(array.get(4).getAsJsonObject().get("COT_VALUE_01").getAsString())
-					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/난지_배경.PNG"));
+					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Nanjiback.PNG"));
 			rb.addSuggestions(new String[]{"1박 2일","2박 3일","3박 4일"});
 			rb.add(
 					new LinkOutSuggestion()
@@ -279,7 +279,7 @@ public class internApp extends DialogflowApp {
 			basicCard
 					.setTitle("노을 캠핑장")
 					.setFormattedText(array.get(5).getAsJsonObject().get("COT_VALUE_01").getAsString())
-					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/노을_배경.PNG"));
+					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Noelback.PNG"));
 			rb.addSuggestions(new String[]{"1박 2일","2박 3일","3박 4일"});
 			rb.add(
 					new LinkOutSuggestion()
@@ -290,7 +290,7 @@ public class internApp extends DialogflowApp {
 			basicCard
 					.setTitle("서울대공원 캠핑장")
 					.setFormattedText(array.get(6).getAsJsonObject().get("COT_VALUE_01").getAsString())
-					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원배경.PNG"));
+					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/seoulback.PNG"));
 			rb.addSuggestions(new String[]{"1박 2일","2박 3일","3박 4일"});
 			rb.add(
 					new LinkOutSuggestion()
@@ -301,7 +301,7 @@ public class internApp extends DialogflowApp {
 			basicCard
 					.setTitle("강동 그린웨이 캠핑장")
 					.setFormattedText(array.get(8).getAsJsonObject().get("COT_VALUE_01").getAsString())
-					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/강동배경.PNG"));
+					.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Gangback.PNG"));
 			rb.addSuggestions(new String[]{"1박 2일","2박 3일","3박 4일"});
 		}
 
@@ -343,10 +343,12 @@ public class internApp extends DialogflowApp {
 		SimpleResponse simpleResponse = new SimpleResponse();
 		BasicCard basicCard = new BasicCard();
 
-		SelectionList selectionlist = new SelectionList();
 
 		selectedDate = CommonUtil.makeSafeString(request.getParameter("date"));
 		String date2 = selectedDate.substring(5,10);
+
+
+		SelectionList selectionlist = new SelectionList();
 
 		Map<String, Object> data = rb.getConversationData();
 
@@ -365,7 +367,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("4인용 가족텐트")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/난지_4인용.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Nanjifour.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -374,7 +376,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("6인용 가족텐트")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/난지_6인용.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Nanjisix.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -383,7 +385,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("몽골텐트(중)")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/난지_몽골텐트.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/NanjiM.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -411,7 +413,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("A구역")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/노을시설위치.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -420,7 +422,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("B구역")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/노을시설위치.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -429,7 +431,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("CD구역")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/노을시설위치.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -447,7 +449,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("1야영장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_1야영장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul1.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -456,7 +458,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("2야영장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_2야영장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul2.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -465,7 +467,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("3야영장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_3야영장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul3.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -474,7 +476,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("4야영장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_4야영장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul4.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -491,7 +493,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("오토캠핑장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/강동_오토.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangauto.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -500,7 +502,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("이팝캠핑장")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/강동_가족캠핑장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangfamily.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -509,7 +511,7 @@ public class internApp extends DialogflowApp {
 											.setTitle("가족캠핑장(마로니에,청단풍나무,자작나무)")
 											.setImage(
 													new Image()
-															.setUrl("https://actions.o2o.kr/devsvr4/image/강동_가족캠핑장.PNG")
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangfamily.PNG")
 											)
 											.setOptionInfo(
 													new OptionInfo()
@@ -546,7 +548,7 @@ public class internApp extends DialogflowApp {
 		;
 		basicCard
 				.setTitle("남아 있는 자리현황")
-				.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_좌석.PNG"));
+				.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/seoulseat.PNG"));
 
 		rb.add(simpleResponse);
 		rb.add(basicCard);
@@ -597,7 +599,7 @@ public class internApp extends DialogflowApp {
 
 					basicCard2
 							.setTitle("남아 있는 자리현황")
-							.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/서울대공원_좌석.PNG"));
+							.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/seoulseat.PNG"));
 					;
 				}
 			}
@@ -607,57 +609,309 @@ public class internApp extends DialogflowApp {
 		}else{
 			simpleResponse.setTextToSpeech("<speak>예약확인해드리겠습니다.\n"+selectedItem+"캠핑장,<break time=\"200ms\"/>"+selectedfacilites+"시설로 <break time=\"200ms\"/> "+seat+"자리로 <break time=\"200ms\"/>"+"<say-as interpret-as=\"date\" format=\"md\">"+date3+"</say-as>"+"부터<break time=\"200ms\"/>"+period+"로 예약완료되셨습니다.\n"+"잘못된 예약일 경우 아래 번호로 연락주세요\n" +
 					"</speak>")
-					.setDisplayText("예약확인해드리겠습니다.\n"+selectedItem+"캠핑장,"+selectedfacilites+" "+seat+"자리로 "+date3+" "+period+" "+" 로 예약완료되셨습니다.\n"+"잘못된 예약일 경우 아래 번호로 연락주세요")
+					.setDisplayText("예약확인해드리겠습니다.\n"+selectedItem+"캠핑장,"+selectedfacilites+" "+seat+"자리 "+date3+" "+period+" "+"로 예약완료되셨습니다.\n"+"잘못된 예약일 경우 아래 번호로 연락주세요")
 			;
 
 			if(selectedItem.equals("난지")) {
 				basicCard
 						.setFormattedText(array.get(4).getAsJsonObject().get("COT_VALUE_02").getAsString())
-						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/난지_배경.PNG"));
-
+						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Nanjiback.PNG"))
+						.setButtons(
+									new ArrayList<Button>(
+										Arrays.asList(
+												new Button()
+													.setTitle("난지 캠핑장 사이트")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("http://www.seoul.go.kr/storyw/campingjang/nanji.do")
+													),
+												new Button()
+													.setTitle("전화번호")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("https://www.google.com/search?sxsrf=ALeKk01j2ODGRkaNj0xUSSeD_XXGlaaI8Q%3A1595207790314&ei=bvAUX9faEomXr7wPsNO4kAg&q=%EB%82%9C%EC%A7%80+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&oq=%EB%82%9C%EC%A7%80+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&gs_lcp=CgZwc3ktYWIQAzIFCAAQzQIyBQgAEM0CMgUIABDNAlC4wwRYs8YEYJbLBGgBcAB4AYABgwOIAaQJkgEHMC4yLjIuMZgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwjXybyN1NrqAhWJy4sBHbApDoIQ4dUDCAw&uact=5")
+													)
+										)
+									)
+						);
 				rb.addSuggestions(new String[]{"02-304-0061"});
-				rb.add(
-						new LinkOutSuggestion()
-								.setDestinationName("난지 캠핑장 사이트")
-								.setUrl("http://www.nanjicamp.com/")
-				);
 			}else if(selectedItem.equals("노을")){
 				basicCard
 						.setFormattedText(array.get(5).getAsJsonObject().get("COT_VALUE_02").getAsString().substring(27,219))
-						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/난지_배경.PNG"));
-
-				rb.addSuggestions(new String[]{"02-304-3213"});
-				rb.add(
-						new LinkOutSuggestion()
-								.setDestinationName("노을 캠핑장 사이트")
-								.setUrl("http://www.seoul.go.kr/storyw/campingjang/noel.do")
+						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Noelback.PNG"))
+						.setButtons(
+								new ArrayList<Button>(
+										Arrays.asList(
+												new Button()
+														.setTitle("노을 캠핑장 사이트")
+														.setOpenUrlAction(
+																new OpenUrlAction().setUrl("http://www.seoul.go.kr/storyw/campingjang/noel.do")
+														),
+												new Button()
+														.setTitle("전화번호")
+														.setOpenUrlAction(
+																new OpenUrlAction().setUrl("https://www.google.com/search?q=%EB%85%B8%EC%9D%84+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&oq=%EB%85%B8%EC%9D%84+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&aqs=chrome..69i57j0l5j69i61j69i60.2431j0j7&sourceid=chrome&ie=UTF-8")
+												)
+								)
+						)
 				);
+				rb.addSuggestions(new String[]{"02-304-3213"});
+
 			}else if(selectedItem.equals("서울대공원")){
 				basicCard
 						.setFormattedText(array.get(6).getAsJsonObject().get("COT_VALUE_02").getAsString())
-						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/난지_배경.PNG"));
-
-				rb.addSuggestions(new String[]{"02-502-3836"});
-				rb.add(
-						new LinkOutSuggestion()
-								.setDestinationName("서울대공원 캠핑장 사이트")
-								.setUrl("http://www.seoul.go.kr/storyw/campingjang/park.do")
-				);
+						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/seoulback.PNG"))
+						.setButtons(
+								new ArrayList<Button>(
+										Arrays.asList(
+												new Button()
+													.setTitle("서울대공원 캠핑장 사이트")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("http://www.seoul.go.kr/storyw/campingjang/park.do")
+													),
+												new Button()
+													.setTitle("전화번호")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("https://www.google.com/search?q=%EC%84%9C%EC%9A%B8%EB%8C%80%EA%B3%B5%EC%9B%90+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&oq=%EC%84%9C%EC%9A%B8%EB%8C%80%EA%B3%B5%EC%9B%90+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&aqs=chrome.0.69i59j69i57.3906j0j7&sourceid=chrome&ie=UTF-8")
+													)
+										)
+								)
+						);
+				rb.addSuggestions(new String[]{"02-500-7870"});
 			}else if(selectedItem.equals("강동")){
 				basicCard
 						.setFormattedText(array.get(8).getAsJsonObject().get("COT_VALUE_02").getAsString())
-						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/난지_배경.PNG"));
-
-				rb.addSuggestions(new String[]{"02-478-4079"});
-				rb.add(
-						new LinkOutSuggestion()
-								.setDestinationName("강동 그린웨이 캠핑장 사이트")
-								.setUrl("https://www.seoul.go.kr/story/campingjang/m_index.html")
+						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/Gangback.PNG"))
+						.setButtons(
+								new ArrayList<Button>(
+									Arrays.asList(
+											new Button()
+													.setTitle("강동 그린웨이 캠핑장 사이트")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("http://www.seoul.go.kr/storyw/campingjang/gangdong.do")
+													),
+											new Button()
+													.setTitle("전화번호")
+													.setOpenUrlAction(
+															new OpenUrlAction().setUrl("https://www.google.com/search?sxsrf=ALeKk03lL1EZpNKOIMugjuewr_j0pqqIvQ%3A1595207558926&ei=hu8UX8-OONCMoASW7qHgDQ&q=%EA%B0%95%EB%8F%99+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&oq=%EA%B0%95%EB%8F%99+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BAgjECc6AggAOgYIABAIEB46AggmUMIDWOALYJIMaAJwAHgDgAHUAYgByg2SAQUxLjkuMpgBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjP6ZGf09rqAhVQBogKHRZ3CNwQ4dUDCAw&uact=5")
+												)
+								)
+						)
 				);
+				rb.addSuggestions(new String[]{"02-478-4079"});
 			}
 			rb.add(simpleResponse);
 		}
 		rb.add(basicCard);
+		return rb.build();
+	}
+
+	@ForIntent("SelectDate - fallback")
+	public ActionResponse CampingSiteSelection_fallback(ActionRequest request) throws ExecutionException, InterruptedException {
+		ResponseBuilder rb = getResponseBuilder(request);
+		SimpleResponse simpleResponse = new SimpleResponse();
+		BasicCard basicCard = new BasicCard();
+
+		Map<String, Object> data = rb.getConversationData();
+
+		data.clear();
+
+		simpleResponse.setTextToSpeech("잘못된 날짜 선택입니다. \n 다시 한번 날짜를 말씀해주세요.")
+				.setDisplayText("잘못된 날짜 선택입니다. \n 다시 한번 날짜를 말씀해주세요.")
+		;
+
+		basicCard
+				.setTitle("날짜를 선택해주세요")
+				.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/cal.PNG"));
+		rb.addSuggestions(new String[]{"8월 29일","다음주 화요일","9일"});
+
+		rb.add(simpleResponse);
+		rb.add(basicCard);
+
+		return rb.build();
+	}
+
+	@ForIntent("selectfacilites - fallback")
+	public ActionResponse selectfacilites_fallback(ActionRequest request) throws ExecutionException, InterruptedException {
+		ResponseBuilder rb = getResponseBuilder(request);
+		SimpleResponse simpleResponse = new SimpleResponse();
+		BasicCard basicCard = new BasicCard();
+
+		SelectionList selectionlist = new SelectionList();
+
+		Map<String, Object> data = rb.getConversationData();
+
+		data.clear();
+
+		simpleResponse.setTextToSpeech("잘못된 시설 선택입니다.\n 선택하신 캠핑장의 시설은 아래와 같습니다.")
+				.setDisplayText("잘못된 시설 선택입니다.\n 선택하신 캠핑장의 시설은 아래와 같습니다.")
+		;
+
+		if(selectedItem.equals("난지")){
+			selectionlist
+					.setTitle("난지 캠핑장")
+					.setItems(
+							Arrays.asList(
+									new ListSelectListItem()
+											.setTitle("4인용 가족텐트")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Nanjifour.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("4인용")),
+									new ListSelectListItem()
+											.setTitle("6인용 가족텐트")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Nanjisix.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("6인용")),
+									new ListSelectListItem()
+											.setTitle("몽골텐트(중)")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/NanjiM.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("몽골텐트")),
+									new ListSelectListItem()
+											.setTitle("카라반")
+											.setImage(
+													new Image()
+															.setUrl("http://blogfiles.naver.net/MjAxNzA5MThfMTk0/MDAxNTA1NzEyMTgzNTg4.3wQyrVjbgY_cLSxSNbqL_1G3fzl1A2jALA5R4kdCi1Ig.4IEee4eIMYd55zFnDMez7OD2EE62jJ7nAYIx049kqVYg.JPEG.tpsxj8585/IMG_8687.JPG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("카라반")
+											)
+
+							)
+
+					);
+		}else if(selectedItem.equals("노을")){
+			selectionlist
+					.setTitle("노을 캠핑장")
+					.setItems(
+							Arrays.asList(
+									new ListSelectListItem()
+											.setTitle("A구역")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("A구역")),
+									new ListSelectListItem()
+											.setTitle("B구역")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("B구역")),
+									new ListSelectListItem()
+											.setTitle("CD구역")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Noelfacility.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("CD구역"))
+
+							)
+
+					);
+		}else if(selectedItem.equals("서울대공원")){
+			selectionlist
+					.setTitle("서울대공원 캠핑장")
+					.setItems(
+							Arrays.asList(
+									new ListSelectListItem()
+											.setTitle("1야영장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul1.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("1야영장")),
+									new ListSelectListItem()
+											.setTitle("2야영장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul2.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("2야영장")),
+									new ListSelectListItem()
+											.setTitle("3야영장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul3.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("3야영장")),
+									new ListSelectListItem()
+											.setTitle("4야영장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/seoul4.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("4야영장"))
+							)
+
+					);
+		}else if(selectedItem.equals("강동")) {
+			selectionlist
+					.setTitle("강동 그린웨이 캠핑장")
+					.setItems(
+							Arrays.asList(
+									new ListSelectListItem()
+											.setTitle("오토캠핑장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangauto.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("오토")),
+									new ListSelectListItem()
+											.setTitle("이팝캠핑장")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangfamily.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("이팝")),
+									new ListSelectListItem()
+											.setTitle("가족캠핑장(마로니에,청단풍나무,자작나무)")
+											.setImage(
+													new Image()
+															.setUrl("https://actions.o2o.kr/devsvr4/image/Gangfamily.PNG")
+											)
+											.setOptionInfo(
+													new OptionInfo()
+															.setKey("가족"))
+							)
+
+					);
+		}
+
+		rb.add(simpleResponse);
+		rb.add(basicCard);
+		rb.add(selectionlist);
+
 		return rb.build();
 	}
 }
