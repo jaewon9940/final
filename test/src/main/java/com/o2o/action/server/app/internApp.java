@@ -32,23 +32,32 @@ public class internApp extends DialogflowApp {
 	String selectedDate;
 	String seat;
 
-//	public static void main(String[] args) {
-//		String urlStr = "http://openapi.seoul.go.kr:8088/6767506b536a773936337a4f656247/json/Mgiscampinginfoseoul/1/5/";
-//		apiController api = new apiController();
-//		String st = api.get(urlStr);
-//		//System.out.print(st);
-//
-//		JsonParser jason = new JsonParser();
-//		JsonObject obj = (JsonObject) jason.parse(st);
-//
-//		JsonObject objs =  obj.get("Mgiscampinginfoseoul").getAsJsonObject();
-//		JsonArray array= objs.get("row").getAsJsonArray();
-//		for (int i = 0; i<7; i++)
-//		{
-//			String sts = array.get(i).getAsJsonObject().get("COT_VALUE_02").getAsString();
-//			System.out.println(sts);
+	public static void main(String[] args) {
+		//String urlStr = "http://openapi.seoul.go.kr:8088/6767506b536a773936337a4f656247/json/Mgiscampinginfoseoul/1/5/";
+		//apiController api = new apiController();
+		//String st = api.get(urlStr);
+		//System.out.print(st);
+/*
+		JsonParser jason = new JsonParser();
+		JsonObject obj = (JsonObject) jason.parse(st);
+
+		JsonObject objs =  obj.get("Mgiscampinginfoseoul").getAsJsonObject();
+		JsonArray array= objs.get("row").getAsJsonArray();
+		for (int i = 0; i<7; i++)
+		{
+			String sts = array.get(i).getAsJsonObject().get("COT_VALUE_02").getAsString();
+			System.out.println(sts);
+		}*/
+//String st = "저는 문자열을 자를때 Split 함수를 즐겨쓰는데요. 오늘 몰랐던 사실 하나를 발견해서 포스팅합니다. 바로 Split함수에서 \\n 개행단위로 문자열을 자르는 방법인데요. 당연히 문자열.split(\"\\n\");이렇게 하면 될줄 알았는데 안먹히더라구요. 알고보니 split함수에서 개행단위로 문자열을 끊으려면 문자열.split(\"\\\\n\"); 이렇게 써주셔야 컴퓨터가 인식한다고 합니다."
+//		;
+//		String[] b = st.split("\\.");
+//		String c = "";
+//		for(int i = 0; i < b.length; i++){
+//			c += b[i] + "  \n";
 //		}
-//	}
+//		System.out.println(c);
+
+	}
 
 	@ForIntent("Default Welcome Intent")
 	public ActionResponse defaultWelcome(ActionRequest request) throws ExecutionException, InterruptedException {
@@ -591,6 +600,14 @@ public class internApp extends DialogflowApp {
 		aa[121] = 1;
 
 		int seletedItem = Integer.parseInt(seat);
+//		String a = array.get(6).getAsJsonObject().get("COT_VALUE_02").getAsString();
+//		String[] b = st.split("\\.");
+//		String c = "";
+//		for(int i = 0; i < b.length; i++){
+//			c += b[i] + " \n";
+//		}
+
+
 		if((seletedItem == 101)||(seletedItem == 102)||(seletedItem == 104)||(seletedItem == 108)||(seletedItem == 112)){
 			for(int i = 101 ; i < 200; i++){
 				if((seletedItem == i) && (aa[i] == 1)){
@@ -657,7 +674,7 @@ public class internApp extends DialogflowApp {
 
 			}else if(selectedItem.equals("서울대공원")){
 				basicCard
-						.setFormattedText(array.get(6).getAsJsonObject().get("COT_VALUE_02").getAsString())
+						.setFormattedText(array.get(6).getAsJsonObject().get("COT_VALUE_02").getAsString().substring(0,219))
 						.setImage(new Image().setUrl("https://actions.o2o.kr/devsvr4/image/seoulback.PNG"))
 						.setButtons(
 								new ArrayList<Button>(
