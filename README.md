@@ -11,15 +11,14 @@ DialogFlow와 Action On Google을 이용한 캠핑장 종합 예약서비스 챗
 대화시나리오
 ------------
 ![Alt text](대화1.JPG)
+![Alt text](대화2.JPG)
+![Alt text](대화3.JPG)
 
 
-
-
-
-
-
-
-
+Flow Chart
+----------
+![Alt text](flowchart1.JPG)
+![Alt text](flowchart2.JPG)
 
 
 
