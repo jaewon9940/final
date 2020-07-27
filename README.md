@@ -10,7 +10,7 @@ DialogFlow와 Action On Google을 이용한 캠핑장 종합 예약서비스 챗
 
 대화시나리오
 ------------
-<img src="C:\Users\최재원\Desktop\개인프로젝트\flowchart1.JPG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="대화1.JPG" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="대화시나리오1"></img>
 
 
 
