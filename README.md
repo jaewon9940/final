@@ -18,7 +18,7 @@ DialogFlow와 Action On Google을 이용한 캠핑장 종합 예약서비스 챗
 Flow Chart
 ----------
 ![Alt text](flowchart1.JPG)
-![Alt text](flowchart2.JPG)
+![Alt text](flowcharT2.JPG)
 
 
 
