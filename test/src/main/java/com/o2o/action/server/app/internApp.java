@@ -666,6 +666,7 @@ public class internApp extends DialogflowApp {
 														.setTitle("전화번호")
 														.setOpenUrlAction(
 																new OpenUrlAction().setUrl("https://www.google.com/search?q=%EB%85%B8%EC%9D%84+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&oq=%EB%85%B8%EC%9D%84+%EC%BA%A0%ED%95%91%EC%9E%A5+%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8&aqs=chrome..69i57j0l5j69i61j69i60.2431j0j7&sourceid=chrome&ie=UTF-8")
+
 												)
 								)
 						)
